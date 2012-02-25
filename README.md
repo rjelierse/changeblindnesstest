@@ -24,5 +24,6 @@ Set up
 Acknowledgements
 --------------
 The change blindness test makes use of the following projects:
+
 * [jquery](http://jquery.com/)
 * [bootstrap](http://twitter.github.com/bootstrap/)
