@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    RewriteRule ^(start|finish|results)/?$ index.php?mode=$1 [L]
+    RewriteRule ^phase/(notable|unnoted|renoted)/?$ index.php?mode=phase&phase=$1 [L]
+    RewriteRule ^results/(download|filtered)/? index.php?mode=results&$1=1 [L]
+</IfModule>
+
+<Files settings.json>
+    Deny from all
+</Files>

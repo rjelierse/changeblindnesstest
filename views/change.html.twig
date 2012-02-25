@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <header class="page-header">
+        <h1>Change blindness test (step {{ step_count }} of 3)</h1>
+    </header>
+    <div id="placeholder" class="well">
+        <p>Please wait while the images are loaded.</p>
+    </div>
+    <div id="rotator" class="hide">
+        <img src="{{ imageWithElement}}">
+        <img src="{{ imageWithoutElement}}">
+    </div>
+    <form method="post" action="" name="changeform" id="changeform">
+        <input type="hidden" name="xcoordinate" id="xcoordinate" value="0">
+        <input type="hidden" name="ycoordinate" id="ycoordinate" value="0">
+        <input type="hidden" name="responsetime" id="responsetime" value="0">
+    </form>
+    <script type="text/javascript" src="js/change.js"></script>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <header class="hero-unit">
+        <h1>Change blindness test</h1>
+        <p>We would like a few minutes of your time to help us with a test in change blindness. Your help is very much appreciated.</p>
+        <p><a class="btn btn-primary btn-large" href="phase/notable">Get started &raquo;</a></p>
+        <p><div class="fb-like" data-layout="button_count" data-width="450" data-show-faces="false" data-font="arial"></div></p>
+        <p><a href="https://twitter.com/share" class="twitter-share-button" data-via="RaymondJelierse" data-hashtags="vcd">Tweet</a></p>
+    </header>
+    <div class="row">
+        <aside class="span8">
+            <h2>Instructions</h2>
+            <p>You will be shown a series of images, each are a pair of alternating images with a slight alteration. Your task is to find the difference as quick as possible. If you have located the difference, click on the area that you think has been changed.</p>
+            <p>When you click on the image, you will be taken to the next pair of images. In total, you will assess three different pairs.</p>
+        </aside>
+        <aside class="span4">
+            <h2>Disclaimer</h2>
+            <p>Zappos.com is in no way affaliated with this website, nor does it have any relation to the contents of this website.</p>
+            <p>For purposes of keeing track of your progress through the test, this website stores a cookie with session information. This cookie will expire once you close your browser.</p>
+        </aside>
+    </div>
+{% endblock %}
+
+{% block webapis %}
+<div id="fb-root"></div>
+<script type="text/javascript" src="//connect.facebook.net/en_US/all.js#xfbml=1" id="facebook-jssdk"></script>
+<script type="text/javascript" src="//platform.twitter.com/widgets.js" id="twitter-wjs"></script>
+{% endblock %}

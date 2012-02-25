@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <header class="page-header">
+        <h1>Change blindness test (step {{ step_count }} of 3)</h1>
+    </header>
+    <p>Your response has been recorded.</p>
+    <p><a class="btn">&laquo; Retry</a> <a class="btn btn-primary" href="{{ next_url }}">Continue to step {{ step_count + 1 }} &raquo;</a></p>
+{% endblock %}

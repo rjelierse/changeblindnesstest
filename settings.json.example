@@ -1,0 +1,47 @@
+{
+    "database": {
+        "host":     "localhost",
+        "username": "user",
+        "password": "pass",
+        "name":     "db"
+    },
+    "phases": [
+        "notable",
+        "unnoted",
+        "renoted"
+    ],
+    "baseURL": "/",
+    "elementLocations": {
+        "notable": {
+            "topleft": {
+                "x": 724,
+                "y": 340
+            },
+            "bottomright": {
+                "x": 884,
+                "y": 456
+            }
+        },
+        "unnoted": {
+            "topleft": {
+                "x": 48,
+                "y": 180
+            },
+            "bottomright": {
+                "x": 900,
+                "y": 200
+            }
+        },
+        "renoted": {
+            "topleft": {
+                "x": 48,
+                "y": 180
+            },
+            "bottomright": {
+                "x": 900,
+                "y": 204
+            }
+        }
+    },
+    "debug": false
+}

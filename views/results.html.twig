@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <header class="page-header">
+        <h1>Change blindness results</h1>
+    </header>
+    <div class="alert alert-info">{% if records == 1 %}Retrieved 1 result.{% else %}Retrieved {{ records }} results.{% endif %}</div>
+    {% if allow_filtering %}
+    <div class="btn-group">
+        <a class="btn{% if filtered %} active{% endif %}" href="results/filtered">Filtered results</a>
+        <a class="btn{% if not filtered %} active{% endif %}" href="results">All results</a>
+    </div>
+    {% endif %}
+
+    <h2 id="statistics">Statistics</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Notable</th>
+                <th>Unnoted</th>
+                <th>Renoted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in stats %}
+            <tr>
+                <td>{{ loop.index }}.</td>
+                {% if record.notable.correct %}<td class="alert-success"><i class="icon-ok"></i>{% else %}<td class="alert-danger"><i class="icon-remove"></i>{% endif %}&nbsp;{{ record.notable.time / 1000 }} seconds</td>
+                {% if record.unnoted.correct %}<td class="alert-success"><i class="icon-ok"></i>{% else %}<td class="alert-danger"><i class="icon-remove"></i>{% endif %}&nbsp;{{ record.unnoted.time / 1000 }} seconds</td>
+                {% if record.renoted.correct %}<td class="alert-success"><i class="icon-ok"></i>{% else %}<td class="alert-danger"><i class="icon-remove"></i>{% endif %}&nbsp;{{ record.renoted.time / 1000 }} seconds</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2 id="raw-results">Raw results</h2>
+    <p><a class="btn" href="results/download"><i class="icon-download-alt"></i> Download results</a></p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th colspan="3">Notable</th>
+                <th colspan="3">Unnoted</th>
+                <th colspan="3">Renoted</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>x</th>
+                <th>y</th>
+                <th>time</th>
+                <th>x</th>
+                <th>y</th>
+                <th>time</th>
+                <th>x</th>
+                <th>y</th>
+                <th>time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in data %}
+            <tr class="{% if record.result.host == '192.168.0.1' %}muted{% endif %}">
+                <td>{{ loop.index }}.</td>
+                <td>{{ record.notable.xcoordinate }}</td>
+                <td>{{ record.notable.ycoordinate }}</td>
+                <td>{{ record.notable.responsetime }}</td>
+                <td>{{ record.unnoted.xcoordinate }}</td>
+                <td>{{ record.unnoted.ycoordinate }}</td>
+                <td>{{ record.unnoted.responsetime }}</td>
+                <td>{{ record.renoted.xcoordinate }}</td>
+                <td>{{ record.renoted.ycoordinate }}</td>
+                <td>{{ record.renoted.responsetime }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

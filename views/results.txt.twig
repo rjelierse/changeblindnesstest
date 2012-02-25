@@ -1,0 +1,5 @@
+notable		unnoted		renoted
+x	y	time	x	y	time	x	y	time
+{% for result in data %}
+{{result.notable.xcoordinate}}	{{result.notable.ycoordinate}}	{{result.notable.responsetime}}	{{result.unnoted.xcoordinate}}	{{result.unnoted.ycoordinate}}	{{result.unnoted.responsetime}}	{{result.renoted.xcoordinate}}	{{result.renoted.ycoordinate}}	{{result.renoted.responsetime}}
+{% endfor %}
